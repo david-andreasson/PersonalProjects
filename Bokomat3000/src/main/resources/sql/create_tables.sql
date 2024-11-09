@@ -11,4 +11,13 @@ CREATE TABLE IF NOT EXISTS `User` (
     );
 
 CREATE TABLE IF NOT EXISTS `Booking` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`userId` INT NOT NULL,
+`date` DATE NOT NULL,
+`timeslot` TIME NOT NULL,
+PRIMARY KEY (`id`),
+    FOREIGN KEY (`userId`) REFERENCES `User` (`id`)
+    );
+
+
 
