@@ -11,11 +11,11 @@ public class BookingService {
     private List<Booking> bookings = new ArrayList<>();
 
     public BookingService() {
-        bookings.add(new Booking(1, 101, 201, LocalDate.now(), Timeslot.MORNING));
-        bookings.add(new Booking(2, 102, 202, LocalDate.now(), Timeslot.LATE_MORNING));
-        bookings.add(new Booking(3, 102, 203, LocalDate.now(), Timeslot.AFTERNOON));
-        bookings.add(new Booking(4, 104, 204, LocalDate.now(), Timeslot.LATE_AFTERNOON));
-        bookings.add(new Booking(5, 105, 205, LocalDate.now(), Timeslot.EVENING));
+        bookings.add(new Booking(1, 101,  LocalDate.now(), Timeslot.MORNING));
+        bookings.add(new Booking(2, 102,  LocalDate.now(), Timeslot.LATE_MORNING));
+        bookings.add(new Booking(3, 102,  LocalDate.now(), Timeslot.AFTERNOON));
+        bookings.add(new Booking(4, 104,  LocalDate.now(), Timeslot.LATE_AFTERNOON));
+        bookings.add(new Booking(5, 105,  LocalDate.now(), Timeslot.EVENING));
     }
 
     public List<Booking> getBookings() {
@@ -47,7 +47,6 @@ public class BookingService {
             oldBooking.setDate(booking.getDate());
             oldBooking.setTimeslot(booking.getTimeslot());
             oldBooking.setUserId(booking.getUserId());
-            oldBooking.setApartmentId(booking.getApartmentId());
         }
     }
 

@@ -5,15 +5,13 @@ import java.time.LocalDate;
 public class Booking {
     private int id;
     private int userId;
-    private int apartmentId;
     private LocalDate date;        // Day for the booking
     private Timeslot timeslot;     // Timeslot for the booking
 
-    // Full constructor requiring all fields
-    public Booking(int id, int userId, int apartmentId, LocalDate date, Timeslot timeslot) {
+    // Constructor without apartmentId
+    public Booking(int id, int userId, LocalDate date, Timeslot timeslot) {
         this.id = id;
         this.userId = userId;
-        this.apartmentId = apartmentId;
         this.date = date;
         this.timeslot = timeslot;
     }
@@ -33,14 +31,6 @@ public class Booking {
 
     public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    public int getApartmentId() {
-        return apartmentId;
-    }
-
-    public void setApartmentId(int apartmentId) {
-        this.apartmentId = apartmentId;
     }
 
     public LocalDate getDate() {
@@ -64,7 +54,6 @@ public class Booking {
         return "Booking{" +
                 "id=" + id +
                 ", userId=" + userId +
-                ", apartmentId=" + apartmentId +
                 ", date=" + date +
                 ", timeslot=" + timeslot +
                 '}';
