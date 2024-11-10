@@ -35,7 +35,7 @@ De centrala diagrammen för systemets klasser och bokningsprocessen finns som se
 - [Sekvensdiagram för Bokningsprocessen](src/main/resources/docs/Bokomat3000_SequenceDiagram.md): Visar flödet när en användare initierar en bokning, inklusive steg som kontroll av tillgänglighet och bekräftelse.
 
 ## Databasdesign
-Projektet använder en MySQL-databas med följande tabeller:
+Projektet använder en H2-databas med följande tabeller:
 
 - **User**: Lagrar användarinformation som `id`, `name`, och `apartmentNumber`.
 - **Booking**: Lagrar bokningsinformation med `id`, `userId`, `date`, och `timeslot`.
@@ -47,15 +47,15 @@ TODO: Lägg till installationsinstruktioner för att skapa databasen och ansluta
 
 ## Beroenden
 - Java 11 eller senare
-- MySQL-databas
-- JDBC-drivrutin för MySQL
+- H2-databas
+- JDBC-drivrutin för H2
 
 ## Att köra projektet
 1. Kör `Main.java` från ditt IDE (finns i `src/main/java/se/davand/app`).
 2. Följ instruktionerna i konsollen för att registrera en användare, boka, visa eller avboka tider.
 
 ## Framtida Utveckling
-Projektet är byggt för att enkelt kunna utökas (exempelvis med Spring Boot) för ett framtida webbgränssnitt. I detta gränssnitt ska användare kunna logga in, boka och hantera bokningar via en webbplats.
+Projektet är byggt för att enkelt kunna utökas för ett framtida webbgränssnitt. I detta gränssnitt ska användare kunna logga in, boka och hantera bokningar via en webbplats.
 
 ## Kontakt
 För frågor om projektet, kontakta David.
