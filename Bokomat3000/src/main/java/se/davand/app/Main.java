@@ -20,7 +20,7 @@ public class Main {
         BookingRepository bookingRepo = new BookingRepository();
 
         // Create a new user to ensure the userId exists in the database
-        User user = new User(101, "Test User", "A101", "testuser@example.com", "123456789", "passwordHash");
+        User user = new User(101, "Test User", 101, "testuser@example.com", "123456789");
         boolean userAdded = userRepo.addUser(user); // Add user to the database
         System.out.println("User added: " + userAdded); // Print confirmation
 
