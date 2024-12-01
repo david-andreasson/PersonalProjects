@@ -5,12 +5,15 @@ public class Movie {
     private String genre;
     private boolean isWatched;
     private int rating;
+    private int year;
 
-    public Movie(String title, String genre, boolean isWatched, int rating) {
+
+    public Movie(String title, String genre, boolean isWatched, int rating, int year) {
         this.title = title;
         this.genre = genre;
         this.isWatched = isWatched;
         this.rating = rating;
+        this.year = year;
     }
 
     public String getTitle() {
@@ -43,6 +46,14 @@ public class Movie {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     @Override
