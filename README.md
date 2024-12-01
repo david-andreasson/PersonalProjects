@@ -21,9 +21,24 @@ Bokomat3000 is a Java-based backend system designed to manage laundry room booki
 
 ---
 
+### WatchlistApp
+**Description:**  
+WatchlistApp is a Java-based console application for managing a personal movie watchlist. Users can add movies, remove them, and list all movies in the watchlist. The project is designed to practice Java fundamentals, API integration, and database handling, with plans for future TMDB API integration.
+
+**Technologies and Tools:**  
+- Java
+- Git
+- IntelliJ IDEA
+- Plans for API integration with TMDB
+- Plans for SQL database integration (e.g., SQLite or MySQL)
+
+**Link:**  
+[Project folder: WatchlistApp](./WatchlistApp)
+
+---
+
 More projects will be added here as I develop and expand my portfolio.
 
 ## Contact
 For questions about the projects or collaboration opportunities, feel free to reach out:
 - **GitHub:** [david-andreasson](https://github.com/david-andreasson)
-
