@@ -55,20 +55,24 @@ public class WatchlistService {
         }
     }
 
-public void markMovieAsWatched(String title) {
-    Movie movie = findMovieByTitle(title);
-    if (movie.isWatched()) {
-        System.out.println("Movie is already marked as watched: " + movie.getTitle());
-        return;
-    }
+    public void markMovieAsWatched(String title) {
+        Movie movie = findMovieByTitle(title);
+        if (movie == null) {
+            System.out.println("Movie not found: " + title);
+            return;
+        }
+        if (movie.isWatched()) {
+            System.out.println("Movie is already marked as watched: " + movie.getTitle());
+            return;
+        }
 
-    if (movie != null) {
-        movie.setWatched(true);
-        System.out.println("Movie marked as watched: " + movie.getTitle());
-    } else {
-        System.out.println("Movie not found: " + title);
+        if (movie != null) {
+            movie.setWatched(true);
+            System.out.println("Movie marked as watched: " + movie.getTitle());
+        } else {
+            System.out.println("Movie not found: " + title);
+        }
     }
-}
 
 
     //Helper function to find a movie by title
