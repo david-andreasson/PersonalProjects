@@ -33,7 +33,7 @@ WatchlistApp is a Java-based console application for managing a personal movie w
 - Plans for SQL database integration (e.g., SQLite or MySQL)
 
 **Link:**  
-[Project folder: MovieApp](./WatchlistApp)
+[Project folder: MovieApp](./MovieApp)
 
 ---
 
