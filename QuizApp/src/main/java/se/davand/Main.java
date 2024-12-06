@@ -17,8 +17,6 @@ public class Main {
         //Ta emot användarens svar och jämföra det med det rätta svaret.
         //Visa antal rätt/felprocent efter varje fråga. (personligt val)
 
-        //Todo - gör mappstruktur
-        //Todo - klass för databas
         //Todo - klass för meny
         //Todo - klass för frågor och svar
         //Todo - klass för logik
