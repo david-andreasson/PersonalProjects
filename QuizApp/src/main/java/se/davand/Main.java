@@ -1,5 +1,8 @@
 package se.davand;
 
+import se.davand.database.QuizDatabase;
+
+
 public class Main {
     public static void main(String[] args) {
 
@@ -21,8 +24,7 @@ public class Main {
         //Todo - klass för logik
         //Todo - metod för att räkna ut felprocent
 
-
-
+        QuizDatabase.connect();
 
     }
 }
