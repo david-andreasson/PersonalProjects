@@ -1,8 +1,12 @@
 package se.davand.ui;
 
+import se.davand.services.QuizService;
+
 import java.util.Scanner;
 
 public class MenuHandler {
+
+    private final QuizService quizService = new QuizService();
 
     public void startMenu() {
         boolean menuRunning = true;
@@ -45,9 +49,9 @@ public class MenuHandler {
             int choice = getUserChoice();
 
             switch (choice) {
-                case 1 -> System.out.printf("Asking questions in order for %s...%n", courseName);
-                case 2 -> System.out.printf("Asking questions randomly for %s...%n", courseName);
-                case 3 -> System.out.printf("Asking questions in reverse order for %s...%n", courseName);
+                case 1 -> quizService.runQuiz(courseName, "ORDER");
+                case 2 -> quizService.runQuiz(courseName, "RANDOM");
+                case 3 -> quizService.runQuiz(courseName, "REVERSE");
                 case 4 -> {
                     System.out.println("Returning to main menu...");
                     inCourseMenu = false;
