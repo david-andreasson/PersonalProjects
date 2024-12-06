@@ -1,6 +1,7 @@
 package se.davand;
 
 import se.davand.database.QuizDatabase;
+import se.davand.ui.MenuHandler;
 
 
 public class Main {
@@ -23,6 +24,8 @@ public class Main {
         //Todo - metod för att räkna ut felprocent
 
         QuizDatabase.connect();
+        MenuHandler menuHandler = new MenuHandler();
+        menuHandler.startMenu(); // Start the menu system
 
     }
 }
