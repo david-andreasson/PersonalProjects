@@ -19,7 +19,7 @@ public class MenuHandler {
                 case 1 -> showCourseMenu("OOP Basics");
                 case 2 -> showCourseMenu("Databases and Design");
                 case 3 -> showCourseMenu("OOP Advanced");
-                case 4 -> {
+                case 0 -> {
                     System.out.println("Goodbye!");
                     menuRunning = false;
                 }
@@ -33,7 +33,7 @@ public class MenuHandler {
         System.out.println("1. OOP Basics");
         System.out.println("2. Databases and Design");
         System.out.println("3. OOP Advanced");
-        System.out.println("4. Exit");
+        System.out.println("0. Exit");
     }
 
     private void showCourseMenu(String courseName) {
@@ -44,7 +44,7 @@ public class MenuHandler {
             System.out.println("1. Ask questions in order");
             System.out.println("2. Ask questions randomly");
             System.out.println("3. Ask questions in reverse order");
-            System.out.println("4. Back to main menu");
+            System.out.println("0. Back to main menu");
 
             int choice = getUserChoice();
 
@@ -52,7 +52,7 @@ public class MenuHandler {
                 case 1 -> quizService.runQuiz(courseName, "ORDER");
                 case 2 -> quizService.runQuiz(courseName, "RANDOM");
                 case 3 -> quizService.runQuiz(courseName, "REVERSE");
-                case 4 -> {
+                case 0 -> {
                     System.out.println("Returning to main menu...");
                     inCourseMenu = false;
                 }
@@ -66,11 +66,11 @@ public class MenuHandler {
         int choice = -1;
 
         while (choice < 1 || choice > 4) {
-            System.out.print("Enter your choice (1-4): ");
+            System.out.print("Enter your choice (1-3 or 0 to exit): ");
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
             } else {
-                System.out.println("Invalid input. Please enter a number between 1 and 4.");
+                System.out.println("Invalid input. Please enter a number between 1 and 3 (or 0 to exit.");
                 scanner.next(); // Consume invalid input
             }
         }
