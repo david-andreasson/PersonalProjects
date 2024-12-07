@@ -65,10 +65,11 @@ public class MenuHandler {
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
 
-        while (choice < 1 || choice > 4) {
+        while (choice < 0 || choice > 3) {
             System.out.print("Enter your choice (1-3 or 0 to exit): ");
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
+                scanner.nextLine(); //Consume newline
             } else {
                 System.out.println("Invalid input. Please enter a number between 1 and 3 (or 0 to exit.");
                 scanner.next(); // Consume invalid input
