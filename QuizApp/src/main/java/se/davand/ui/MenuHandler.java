@@ -28,9 +28,9 @@ public class MenuHandler {
 
     private void showMainMenu() {
         System.out.println("\n=== MAIN MENU ===");
-        System.out.println("1. OOP Basics");
-        System.out.println("2. Databases and Design");
-        System.out.println("3. OOP Advanced");
+        System.out.println("1. OOP Basics (No questions available in this version)");
+        System.out.println("2. Databases and Design (No questions available in this version)");
+        System.out.println("3. OOP Advanced (165 available questions)");
         System.out.println("0. Exit");
     }
 
