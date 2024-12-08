@@ -37,6 +37,25 @@ WatchlistApp is a Java-based console application for managing a personal movie w
 
 ---
 
+### QuizApp
+**Description:**  
+QuizApp is a Java-based console application designed to help me and my classmates practice for exams by answering multiple-choice questions from various courses. The application allows users to select a course, answer quiz questions in different orders (sequential, random, or reverse), and keeps track of their correct answers and error rate.
+
+This project is intended to make studying more interactive and to reinforce our understanding of the course material.
+
+**Technologies and Tools:**  
+- Java  
+- SQLite  
+- JDBC  
+- Git  
+- IntelliJ IDEA  
+- Design principles: Clean Code, SOLID principles  
+
+**Link:**  
+[Project folder: QuizApp](./QuizApp)
+
+---
+
 More projects will be added here as I develop and expand my portfolio.
 
 ## Contact
