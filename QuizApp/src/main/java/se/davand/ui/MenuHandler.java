@@ -12,12 +12,13 @@ public class MenuHandler {
 
         while (menuRunning) {
             showMainMenu();
-            int choice = inputHandler.getUserChoice(0, 3);
+            int choice = inputHandler.getUserChoice(0, 4);
 
             switch (choice) {
                 case 1 -> showCourseMenu("OOP Basics");
                 case 2 -> showCourseMenu("Databases and Design");
                 case 3 -> showCourseMenu("OOP Advanced");
+                case 4 -> showCourseMenu("Test");
                 case 0 -> {
                     System.out.println("Goodbye!");
                     menuRunning = false;
@@ -31,6 +32,7 @@ public class MenuHandler {
         System.out.println("1. OOP Basics (No questions available in this version)");
         System.out.println("2. Databases and Design (No questions available in this version)");
         System.out.println("3. OOP Advanced (165 available questions)");
+        System.out.println("4. Test (30 available questions)");
         System.out.println("0. Exit");
     }
 
