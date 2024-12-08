@@ -41,7 +41,10 @@ public class QuizService {
         int totalQuestions = 0;
 
         for (Question question : questions) {
-            System.out.println("\n" + question.getQuestionText());
+            // Visa frågan med boxad stil och gul färg
+            System.out.println("\u001B[33m╔══════════════════════════════════════════════════════════════════════════════════════╗");
+            System.out.printf(" ❓ %s%n", question.getQuestionText());
+            System.out.println("╚══════════════════════════════════════════════════════════════════════════════════════╝\u001B[0m");
             for (String option : question.getOptions()) {
                 System.out.println(option);
             }
@@ -56,10 +59,16 @@ public class QuizService {
 
             totalQuestions++;
             if (question.isCorrect(userAnswer)) {
+                System.out.println("\u001B[32m+------------------+\u001B[0m");
+                System.out.println("\u001B[32m|   ✅ Correct!    |\u001B[0m");
+                System.out.println("\u001B[32m+------------------+\u001B[0m");
+
                 correctAnswers++;
-                System.out.println("Correct!");
             } else {
-                System.out.printf("Wrong! The correct answer was %s.%n", question.getCorrectOption());
+                System.out.println("\u001B[31m+------------------+\u001B[0m");
+                System.out.println("\u001B[31m|   ❌ Wrong!      |\u001B[0m");
+                System.out.println("\u001B[31m+------------------+\u001B[0m");
+
             }
 
             showStatistics(correctAnswers, totalQuestions);
