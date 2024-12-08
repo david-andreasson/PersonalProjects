@@ -4,7 +4,7 @@ This repository contains a collection of personal projects developed to enhance 
 
 ## Projects
 
-### Bokomat3000
+### Bokomat3000 
 **Description:**  
 Bokomat3000 is a Java-based backend system designed to manage laundry room bookings in an apartment building environment. The system is implemented as a console application where residents can book and cancel laundry times, with plans for future web interface integration.
 
@@ -15,6 +15,8 @@ Bokomat3000 is a Java-based backend system designed to manage laundry room booki
 - Git
 - IntelliJ IDEA
 - Design patterns such as Repository Pattern and Service Layer
+
+(This project is still under development)
 
 **Link:**  
 [Project folder: Bokomat3000](./Bokomat3000)
@@ -31,6 +33,8 @@ WatchlistApp is a Java-based console application for managing a personal movie w
 - IntelliJ IDEA
 - Plans for API integration with TMDB
 - Plans for SQL database integration (e.g., SQLite or MySQL)
+
+(This project is still under development)
 
 **Link:**  
 [Project folder: MovieApp](https://github.com/david-andreasson/PersonalProjects/tree/main/MovieApp)
@@ -50,6 +54,8 @@ This project is intended to make studying more interactive and to reinforce our 
 - Git  
 - IntelliJ IDEA  
 - Design principles: Clean Code, SOLID principles  
+
+(This project is still under development)
 
 **Link:**  
 [Project folder: QuizApp](./QuizApp)
