@@ -1,15 +1,19 @@
 package se.davand.services;
 
 import se.davand.models.Question;
+import se.davand.models.User;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
 public class QuizRunner {
-    public void runQuiz(List<Question> questions) {
+    public void runQuiz(User user, List<Question> questions, String courseName) {
         Scanner scanner = new Scanner(System.in);
         int correctAnswers = 0;
-        int totalQuestions = 0;
+        int totalAskedQuestions = 0;  // Ny räknare för ställda frågor
 
         for (Question question : questions) {
             System.out.println("==========================================================================================================");
@@ -24,10 +28,11 @@ public class QuizRunner {
 
             if (userAnswer.equals("E")) {
                 System.out.println("Exiting to the main menu...");
-                return;
+                break;  // Avsluta quizet om användaren väljer "E"
             }
 
-            totalQuestions++;
+            totalAskedQuestions++;  // Öka räknaren för varje besvarad fråga
+
             if (question.isCorrect(userAnswer)) {
                 System.out.println("+------------------+");
                 System.out.println("|     Correct!     |");
@@ -40,8 +45,10 @@ public class QuizRunner {
                 System.out.println("+------------------+");
             }
 
-            new QuizStatistics().showStatistics(correctAnswers, totalQuestions);
+            new QuizStatistics().showStatistics(correctAnswers, totalAskedQuestions);  // Använd totalAskedQuestions
         }
+
+        saveResult(user, correctAnswers, totalAskedQuestions, courseName);
     }
 
     private String getUserAnswer(Scanner scanner) {
@@ -51,6 +58,22 @@ public class QuizRunner {
                 return input;
             }
             System.out.println("Invalid input. Please enter A, B, C, D, or press E to exit.");
+        }
+    }
+
+    private void saveResult(User user, int correctAnswers, int totalAskedQuestions, String courseName) {
+        String sql = "INSERT INTO results (user_id, course_name, score, total_questions) VALUES (?, ?, ?, ?)";
+
+        try (Connection conn = se.davand.database.QuizDatabase.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, user.getId());
+            pstmt.setString(2, courseName);
+            pstmt.setInt(3, correctAnswers);
+            pstmt.setInt(4, totalAskedQuestions);
+            pstmt.executeUpdate();
+            System.out.println("Result saved successfully!");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
