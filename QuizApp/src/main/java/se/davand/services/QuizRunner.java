@@ -16,6 +16,7 @@ public class QuizRunner {
         int totalAskedQuestions = 0;  // Ny räknare för ställda frågor
 
         for (Question question : questions) {
+            System.out.println();
             System.out.println("==========================================================================================================");
             System.out.println(question.getQuestionText());
             System.out.println("==========================================================================================================");
@@ -34,15 +35,19 @@ public class QuizRunner {
             totalAskedQuestions++;  // Öka räknaren för varje besvarad fråga
 
             if (question.isCorrect(userAnswer)) {
+                System.out.println();
                 System.out.println("+------------------+");
                 System.out.println("|     Correct!     |");
                 System.out.println("+------------------+");
+                System.out.println();
                 correctAnswers++;
             } else {
+                System.out.println();
                 System.out.println("+------------------+");
-                System.out.printf("|      Wrong!       |\n");
+                System.out.printf("|      Wrong!      |\n");
                 System.out.printf("|    Correct: %s    |\n", question.getCorrectOption());
                 System.out.println("+------------------+");
+                System.out.println();
             }
 
             new QuizStatistics().showStatistics(correctAnswers, totalAskedQuestions);  // Använd totalAskedQuestions

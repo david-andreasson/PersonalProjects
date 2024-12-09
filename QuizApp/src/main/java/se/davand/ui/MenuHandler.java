@@ -2,10 +2,12 @@ package se.davand.ui;
 
 import se.davand.models.User;
 import se.davand.services.QuizService;
+import se.davand.services.QuizStatistics;
 
 public class MenuHandler {
     private final QuizService quizService = new QuizService();
     private final InputHandler inputHandler = new InputHandler();
+    private final QuizStatistics quizStatistics = new QuizStatistics();
     private final User user;
 
     public MenuHandler(User user) {
@@ -16,12 +18,13 @@ public class MenuHandler {
         boolean menuRunning = true;
         while (menuRunning) {
             showMainMenu();
-            int choice = inputHandler.getUserChoice(0, 4);
+            int choice = inputHandler.getUserChoice(0, 5);
             switch (choice) {
                 case 1 -> showCourseMenu("OOP Basics");
                 case 2 -> showCourseMenu("Databases and Design");
                 case 3 -> showCourseMenu("OOP Advanced");
                 case 4 -> showCourseMenu("Test");
+                case 5 -> quizStatistics.showResults(user);
                 case 0 -> menuRunning = false;
             }
         }
@@ -33,6 +36,7 @@ public class MenuHandler {
         System.out.println("2. Databases and Design (No questions available in this version)");
         System.out.println("3. OOP Advanced (" + quizService.getQuestionCount("OOP Advanced") + " questions available)");
         System.out.println("4. Test (" + quizService.getQuestionCount("Test") + " questions available)");
+        System.out.println("5. Show your ten latest results");
         System.out.println("0. Exit");
     }
 
