@@ -65,8 +65,8 @@ public class QuizService {
                 correctAnswers++;
             } else {
                 System.out.println("+------------------+");
-                System.out.printf("|      Wrong!      |\n");
-                System.out.printf("| Correct: %s      |\n", question.getCorrectOption());
+                System.out.printf("|      Wrong!       |\n");
+                System.out.printf("|    Correct: %s    |\n", question.getCorrectOption());
                 System.out.println("+------------------+");
             }
 
