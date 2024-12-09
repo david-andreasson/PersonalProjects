@@ -14,6 +14,9 @@ Projektet är byggt för att förbättra vår förståelse av kursmaterialet och
 - **Frågeordning:** Ställ frågor i nummerordning, slumpmässig ordning eller omvänd ordning.
 - **Svara på frågor:** Svara på flervalsfrågor och få omedelbar feedback.
 - **Statistik:** Programmet visar antal rätta svar och aktuell felprocent efter varje fråga.
+- **Statistikloggning:** Spara och visa de 10 senaste spelomgångarna för varje användare.
+- **Användarhantering:** Logga in med användarnamn; nya användare registreras automatiskt.
+- **Databasanslutning:** Frågor och resultat lagras i en SQLite-databas.
 
 ---
 
@@ -29,15 +32,20 @@ QuizApp
 │   │   │           ├── Main.java               # Startpunkt för applikationen  
 │   │   │           ├── database                # Databasanslutning och frågehämtning  
 │   │   │           │   └── QuizDatabase.java  
-│   │   │           ├── models                  # Dataobjekt för frågor  
-│   │   │           │   └── Question.java  
-│   │   │           ├── services                # Tjänstklass för quizlogik  
-│   │   │           │   └── QuizService.java  
+│   │   │           ├── models                  # Dataobjekt för frågor och användare  
+│   │   │           │   ├── Question.java  
+│   │   │           │   └── User.java  
+│   │   │           ├── services                # Tjänstklasser för quiz och statistik  
+│   │   │           │   ├── AuthService.java  
+│   │   │           │   ├── QuestionFetcher.java  
+│   │   │           │   ├── QuizRunner.java  
+│   │   │           │   ├── QuizService.java  
+│   │   │           │   └── QuizStatistics.java  
 │   │   │           └── ui                      # Användargränssnitt och menyhantering  
 │   │   │               ├── MenuHandler.java  
 │   │   │               └── InputHandler.java  
 ├── data  
-│   └── quiz.db                                 # SQLite-databas med frågor  
+│   └── quiz.db                                 # SQLite-databas med frågor och resultat  
 └── README.md
 ```
 
@@ -124,7 +132,6 @@ Error rate: 0.00%
 ## Framtida Utveckling
 
 - **Lägg till fler kurser och frågor.**
-- **Statistikloggning:** Spara användarens resultat för att spåra framsteg över tid.
 - **Grafiskt gränssnitt:** Utveckla en JavaFX- eller webbversion för en bättre användarupplevelse.
 
 ---
